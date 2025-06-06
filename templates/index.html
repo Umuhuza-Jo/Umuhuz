@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Umuhuza Download</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="center-container">
+        <h1>Umuhuza Download</h1>
+        <input type="text" id="urlInput" placeholder="Paste video URL..." style="width: 60%;">
+        <button onclick="checkVideo()">Check Video</button>
+        <div id="videoInfo" style="margin-top: 20px;"></div>
+    </div>
+    <!-- Modal for progress -->
+    <div id="progressModal" class="modal">
+        <div class="modal-content center-container">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Download Progress</h2>
+            <div id="progressBarContainer">
+                <div id="progressBar"></div>
+            </div>
+            <p id="progressStatus"></p>
+            <button id="cancelBtn" onclick="cancelDownload()">Cancel</button>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
