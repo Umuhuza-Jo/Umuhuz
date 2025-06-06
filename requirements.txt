@@ -1,1 +1,4 @@
-pip install flask pytubefix moviepy werkzeug
+flask 
+pytubefix 
+moviepy 
+werkzeug
