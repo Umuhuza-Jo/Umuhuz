@@ -2,3 +2,4 @@ flask
 pytubefix 
 moviepy 
 werkzeug
+gunicorn
