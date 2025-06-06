@@ -1,5 +1,5 @@
 Flask
 pytubefix
-moviepy
+moviepy>=1.0.0
 Werkzeug
 gunicorn
