@@ -1,5 +1,5 @@
-flask 
-pytubefix 
-moviepy 
-werkzeug
+Flask
+pytubefix
+moviepy
+Werkzeug
 gunicorn
