@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umuhuza Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- App Header and Appearance Switcher (centered header) -->
+    <header class="app-header center-header">
+        <div class="app-logo-title">
+            <h2 class="logo-title">Umuhuza Downloader</h2>
+        </div>
+        <!-- Appearance Mode Switcher (icon only, top-right) -->
+        <div class="theme-switcher" id="themeSwitcher" title="Switch appearance mode">
+            <span id="themeIcon">🌞</span>
+        </div>
+    </header>
+    <!-- Description Paragraph, centered and outside container -->
+    <div class="description-center">
+        <p>
+            1. Download YouTube videos and audio easily with Umuhuza Downloader.<br>
+            2. Paste a video URL, view available formats, and monitor your download progress live.<br>
+            3. Switch appearance mode, interact, and get instant feedback.
+        </p>
+    </div>
+    <!-- Thumbnail for loading/checking (outside container) -->
+    <div id="checkThumbBox" class="hidden">
+        <div class="thumb-container">
+            <img id="checkThumb" src="" alt="Thumbnail">
+            <div class="spinner-overlay">
+                <div class="spinner"></div>
+            </div>
+        </div>
+        <div class="thumb-desc">Checking video information…</div>
+    </div>
+    <div class="container">
+        <!-- Main content continues... -->
+        <form id="urlForm">
+            <input type="url" id="videoUrl" placeholder="Paste YouTube video URL..." required>
+            <button type="submit">Check</button>
+        </form>
+        <div id="videoInfo" class="hidden">
+            <div class="video-meta">
+                <img id="thumbnail" src="" alt="Thumbnail">
+                <div>
+                    <h2 id="title"></h2>
+                    <p id="channel"></p>
+                    <p><span id="views"></span> views • <span id="date"></span></p>
+                </div>
+            </div>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="video">Video</button>
+                <button class="tab-btn" data-tab="audio">Audio</button>
+            </div>
+            <div class="tab-content active" id="videoTab">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Resolution</th>
+                            <th>Size (MB)</th>
+                            <th>Format</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="videoStreams"></tbody>
+                </table>
+            </div>
+            <div class="tab-content" id="audioTab">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quality</th>
+                            <th>Size (MB)</th>
+                            <th>Format</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="audioStreams"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="progressDialog" class="modal hidden">
+        <div class="dialog-box">
+            <h3>Download Progress</h3>
+            <div id="progressBarContainer">
+                <div id="progressBar"></div>
+            </div>
+            <p id="progressText"></p>
+            <div class="dialog-actions">
+                <button id="cancelBtn">Cancel</button>
+                <button id="closeBtn">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
