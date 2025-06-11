@@ -1,5 +1,5 @@
-Flask
-pytubefix
-moviepy>=1.0.0
-Werkzeug
-gunicorn
+Flask==2.3.3
+Werkzeug==2.3.7
+moviepy==1.0.3
+pytubefix==10.9.3
+gunicorn==21.2.0
