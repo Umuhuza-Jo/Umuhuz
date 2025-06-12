@@ -37,7 +37,7 @@ def create_progress_callback(download_id):
 
 def threaded_download(url, itag, download_type, download_id):
     try:
-        video = pytubefix.YouTube(url)
+        video = pytubefix.YouTube(url, client='WEB')
         stream = video.streams.get_by_itag(itag)
         if not stream:
             download_progress[download_id]['status'] = 'error'
@@ -91,7 +91,7 @@ def check_video():
     if not url:
         return jsonify({'error': 'Please provide a URL'}), 400
     try:
-        video = pytubefix.YouTube(url)
+        video = pytubefix.YouTube(url, client='WEB')
         streams = video.streams
         video_info = {
             'title': video.title,
