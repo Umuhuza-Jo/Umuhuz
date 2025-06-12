@@ -34,7 +34,7 @@ def create_progress_callback(download_id):
 
 def threaded_download(url, itag, download_type, download_id, page):
     try:
-        video = pytubefix.YouTube(url)
+        video = pytubefix.YouTube(url, client='WEB')
         stream = video.streams.get_by_itag(itag)
         if not stream:
             download_progress[download_id]['status'] = 'error'
@@ -115,7 +115,7 @@ def main(page: ft.Page):
             page.update()
             return
         try:
-            video = pytubefix.YouTube(url)
+            video = pytubefix.YouTube(url, client='WEB')
             streams = video.streams
             info_text.value = f"Title: {video.title}\nDuration: {video.length}s\nViews: {video.views}\nPublished: {video.publish_date}"
             # Populate dropdown
